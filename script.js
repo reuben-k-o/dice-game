@@ -45,7 +45,6 @@ btnRoll.addEventListener('click', function () {
   //generate random number
   if (playing) {
     const dice = Math.trunc(Math.random() * 6) + 1;
-    console.log(dice);
 
     //display the dice
     diceEl.classList.remove('hidden');
@@ -79,6 +78,9 @@ btnHold.addEventListener('click', function () {
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.remove('player--active');
+      setTimeout(() => {
+        alert('Yay! You have won the game 🏆🏆');
+      }, 1000);
     } else {
       switchPlayer();
     }
